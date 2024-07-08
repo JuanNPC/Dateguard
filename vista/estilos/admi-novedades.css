@@ -35,7 +35,7 @@ header {
 }
 
 .sidebar a {
-  margin-bottom: 20px; /* Ajustamos el margen inferior de los enlaces en la barra lateral */
+  margin-bottom: 20px; 
   width: 100%;
   padding: 10px;
   box-sizing: border-box;

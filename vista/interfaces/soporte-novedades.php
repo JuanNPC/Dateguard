@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-// Verifica si la sesión está activa
+
 if (!isset($_SESSION['usuario'])) {
-    // Redirige al usuario a la página de login si no está logueado
+    
     header("Location: login.php");
     exit;
 }
 
-// Asegúrate de que la página no se almacene en caché
+
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
@@ -18,22 +18,22 @@ header("Pragma: no-cache");
 include '../../modelo/conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Asegurarse de que todos los campos estén presentes
+    
     if (empty($_POST['tecnico']) || empty($_POST['tiponovedad']) || empty($_POST['fechanovedad']) || empty($_POST['ambiente']) || empty($_POST['novdescripcion'])) {
         die("Error: todos los campos son obligatorios.");
     }
 
-    // Obtener datos del formulario
+    
     $tecnico = $_POST['tecnico'];
     $tiponovedad = $_POST['tiponovedad'];
     $fechanovedad = $_POST['fechanovedad'];
     $ambiente = $_POST['ambiente'];
     $novdescripcion = $_POST['novdescripcion'];
 
-    // Crear la consulta SQL para insertar los datos
+    
     $sql = "INSERT INTO registro_novedades (tecnico, tipo_novedad, fecha_novedad, ambiente, descripcion) VALUES ('$tecnico', '$tiponovedad', '$fechanovedad', '$ambiente', '$novdescripcion')";
 
-    // Ejecutar la consulta
+    
     if ($conn->query($sql) === TRUE) {
         echo '<script>alert("Registro de novedad exitoso"); window.location.href="soporte-novedades.php";</script>';
         exit;
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
-    // Cerrar la conexión
+  
     $conn->close();
 }
 ?>

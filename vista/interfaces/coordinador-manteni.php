@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-// Verifica si la sesión está activa
+
 if (!isset($_SESSION['usuario'])) {
-    // Redirige al usuario a la página de login si no está logueado
+   
     header("Location: login.php");
     exit;
 }
 
-// Asegúrate de que la página no se almacene en caché
+
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");

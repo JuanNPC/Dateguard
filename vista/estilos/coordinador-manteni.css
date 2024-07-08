@@ -54,7 +54,7 @@ main {
 }
 
 .table-responsive {
-  margin-top: 20px; /* Espacio superior para la tabla */
+  margin-top: 20px; 
 }
 
 .table th,
@@ -62,7 +62,7 @@ main {
   border: 1px solid #dee2e6;
   padding: 8px;
   text-align: center;
-  word-wrap: break-word; /* Evita que el texto se desborde */
+  word-wrap: break-word; 
 }
 
 .table th {

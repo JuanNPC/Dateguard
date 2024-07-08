@@ -1,31 +1,31 @@
 <?php
 session_start();
 
-include '../../modelo/conexion.php'; // Reemplaza con la ruta correcta a tu archivo de conexión
+include '../../modelo/conexion.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST['usuario']) && !empty($_POST['password'])) {
         $usuario = $conn->real_escape_string($_POST['usuario']);
         $password = $_POST['password'];
 
-        // Realiza una consulta segura para obtener el usuario
+        
         $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
         $result = $conn->query($sql);
 
-        // Verifica si se obtuvo algún resultado
+        
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
 
-            // Obtiene la contraseña almacenada en la base de datos
+           
             $stored_password = $row['contrasena'];
 
-            // Verifica la contraseña usando password_verify
+            
             if (password_verify($password, $stored_password)) {
-                // Contraseña correcta, establece la sesión de usuario
+               
                 $_SESSION['usuario'] = $usuario;
                 $_SESSION['rol'] = $row['rol'];
 
-                // Redirigir según el rol del usuario
+
                 switch ($row['rol']) {
                     case 'ADMINISTRADOR':
                         header("Location: administrador.php");
@@ -37,20 +37,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         header("Location: coordinador.php");
                         exit();
                     default:
-                        // Redirigir a una página de error en caso de rol no reconocido
+                        
                         header("Location: error.html");
                         exit();
                 }
             } else {
-                // Contraseña incorrecta
+                
                 echo "<script>alert('Contraseña incorrecta');</script>";
             }
         } else {
-            // Usuario no encontrado
+            
             echo "<script>alert('Usuario no encontrado');</script>";
         }
     } else {
-        // Campos no completados
+        
         echo "<script>alert('Por favor, complete todos los campos.');</script>";
     }
 }

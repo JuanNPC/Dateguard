@@ -1,48 +1,47 @@
 <?php
 include '../../modelo/conexion.php';
 
-// Función para eliminar tildes y caracteres especiales, preservando espacios
+
 function quitar_tildes_y_especiales($cadena) {
-    // Reemplazar caracteres con tilde por sus equivalentes sin tilde
+    
     $cadena = str_replace(
         array('á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú'),
         array('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'),
         $cadena
     );
 
-    // Reemplazar otros caracteres especiales, pero preservar espacios
+    
     $cadena = preg_replace('/[^a-zA-Z0-9\s]/', '', $cadena);
 
     return $cadena;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener datos del formulario y normalizar el rol
+    
     $nombre = $_POST['nombre'];
     $correo = $_POST['correo'];
-    $rol = $_POST['rol']; // Asumiendo que ya está en mayúsculas desde el formulario
-    $rol_normalizado = quitar_tildes_y_especiales($rol); // Normalizar el rol
+    $rol = $_POST['rol']; 
+    $rol_normalizado = quitar_tildes_y_especiales($rol); 
     $usuario = $_POST['usuario'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Encriptar la contraseña
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
 
-    // Validar que los datos no estén vacíos
+    
     if (empty($nombre) || empty($correo) || empty($rol) || empty($usuario) || empty($_POST['password'])) {
         die("Error: Todos los campos son obligatorios.");
     }
 
-    // Crear la consulta SQL sin parámetros seguros
+    
     $sql = "INSERT INTO usuarios (nombre, correo, rol, usuario, contrasena) VALUES ('$nombre', '$correo', UPPER('$rol_normalizado'), '$usuario', '$password')";
 
-    // Ejecutar la consulta
+    
     if ($conn->query($sql) === TRUE) {
-        // Mostrar alerta de registro exitoso y redireccionar
+        
         echo '<script>alert("Registro exitoso"); window.location.replace("login.php");</script>';
-        exit; // Terminar el script para evitar cualquier salida adicional
+        exit; 
     } else {
         echo "Error al registrar el usuario: " . $conn->error;
     }
 
-    // Cerrar la conexión
     $conn->close();
 }
 ?>

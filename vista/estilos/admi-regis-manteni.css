@@ -50,7 +50,7 @@ main {
   background-position: center;
   padding: 20px;
   min-height: 100vh;
-  overflow: auto; /* Cambiado a 'auto' para permitir el desplazamiento vertical */
+  overflow: auto; 
 }
 
 .table {

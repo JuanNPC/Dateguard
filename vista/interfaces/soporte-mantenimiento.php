@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-// Verifica si la sesión está activa
+
 if (!isset($_SESSION['usuario'])) {
-    // Redirige al usuario a la página de login si no está logueado
+    
     header("Location: login.php");
     exit;
 }
 
-// Asegúrate de que la página no se almacene en caché
+
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
@@ -18,19 +18,19 @@ header("Pragma: no-cache");
 include '../../modelo/conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Asegurarse de que todos los campos estén presentes
+    
     if (empty($_POST['tecnico']) || empty($_POST['fechamantenimiento']) || empty($_POST['placa']) || empty($_POST['tipomantenimiento']) || empty($_POST['ambiente'])) {
         die("Error: todos los campos son obligatorios.");
     }
 
-    // Obtener datos del formulario
+    
     $tecnico = $_POST['tecnico'];
     $fechamantenimiento = $_POST['fechamantenimiento'];
     $placa = $_POST['placa'];
     $tipomantenimiento = $_POST['tipomantenimiento'];
     $ambiente = $_POST['ambiente'];
 
-    // Mapear el tipo de mantenimiento según el valor del select
+    
     switch ($tipomantenimiento) {
         case "fallointernet":
             $tipomantenimiento_texto = "Fallo Internet";
@@ -45,10 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $tipomantenimiento_texto = "";
     }
 
-    // Crear la consulta SQL para insertar los datos
+    
     $sql = "INSERT INTO registro_mantenimiento (tecnico, fecha_mantenimiento, placa, mantenimiento, ambiente) VALUES ('$tecnico', '$fechamantenimiento', '$placa', '$tipomantenimiento_texto', '$ambiente')";
 
-    // Ejecutar la consulta
+    
     if ($conn->query($sql) === TRUE) {
         echo '<script>alert("Registro de mantenimiento exitoso"); window.location.href="soporte-mantenimiento.php";</script>';
         exit;
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
-    // Cerrar la conexión
+    
     $conn->close();
 }
 ?>

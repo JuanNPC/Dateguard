@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-// Verifica si la sesión está activa
+
 if (!isset($_SESSION['usuario'])) {
-    // Redirige al usuario a la página de login si no está logueado
+    
     header("Location: login.php");
     exit;
 }
 
-// Asegúrate de que la página no se almacene en caché
+
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
@@ -18,7 +18,7 @@ header("Pragma: no-cache");
 include '../../modelo/conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener datos del formulario
+    
     $marca = $_POST['marca'];
     $serial = $_POST['serial'];
     $placa = $_POST['placa'];
@@ -28,24 +28,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $estado = $_POST['estado'];
     $responsable = $_POST['responsable'];
 
-    // Validar que los datos no estén vacíos
+    
     if (empty($marca) || empty($serial) || empty($placa) || empty($año_adquisicion) || empty($ambiente) || empty($tipo_activo) || empty($estado) || empty($responsable)) {
         die("Error: Todos los campos son obligatorios.");
     }
 
-    // Crear la consulta SQL para insertar los datos
+   
     $sql = "INSERT INTO registro_activos (marca, serial, placa, ano_adquisicion, ambiente, tipo_activo, estado, responsable) VALUES ('$marca', '$serial', '$placa', '$año_adquisicion', '$ambiente', '$tipo_activo', '$estado', '$responsable')";
 
-    // Ejecutar la consulta
+    
     if ($conn->query($sql) === TRUE) {
-        // Mostrar alerta de registro exitoso y redireccionar
+        
         echo '<script>alert("Registro de activo exitoso"); window.location.replace("admi-registroactivo.php");</script>';
-        exit; // Terminar el script para evitar cualquier salida adicional
+        exit; 
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
-    // Cerrar la conexión
+    
     $conn->close();
 }
 ?>

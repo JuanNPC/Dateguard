@@ -16,8 +16,8 @@ body {
 }
 
 header {
-  background-color: #343a40; /* Fondo oscuro para el encabezado */
-  color: #fff; /* Texto blanco para el encabezado */
+  background-color: #343a40; 
+  color: #fff; 
   padding: 10px;
   text-align: center;
   margin-bottom: 20px;

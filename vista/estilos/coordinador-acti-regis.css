@@ -19,7 +19,7 @@ header {
   background-color: #000;
   color: #fff;
   padding: 10px;
-  text-align: center; /* Centra el texto en el header */
+  text-align: center; 
   margin-bottom: 20px;
 }
 
@@ -57,28 +57,28 @@ main {
 
 .table {
   width: 100%;
-  border: 1px solid #dee2e6; /* Borde para toda la tabla */
+  border: 1px solid #dee2e6; 
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 
 .table th,
 .table td {
-  border: 1px solid #dee2e6; /* Borde para celdas */
+  border: 1px solid #dee2e6; 
   padding: 8px;
   text-align: center;
-  word-wrap: break-word; /* Evita que el texto se desborde */
+  word-wrap: break-word; 
 }
 
 .table th {
-  background-color: #343a40; /* Color de fondo oscuro para las cabeceras */
-  color: #fff; /* Color del texto en las cabeceras */
+  background-color: #343a40; 
+  color: #fff; 
 }
 
 .table tbody tr:nth-child(even) {
-  background-color: #ffffff; /* Fondo blanco para filas pares */
+  background-color: #ffffff; 
 }
 
 .table tbody tr:hover {
-  background-color: #e9ecef; /* Color de fondo al hacer hover */
+  background-color: #e9ecef; 
 }
