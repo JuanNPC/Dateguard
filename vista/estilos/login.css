@@ -1,0 +1,29 @@
+@font-face{
+    font-family: "Poppins-Light";
+    src: url(../fuentes/Poppins-Light.ttf);
+  }
+
+h2{
+    font-family: "Poppins-Light";
+}
+
+label{
+    font-family: "Poppins-Light";
+}
+
+.bg-cover {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+.form-container {
+    background-color: #333; 
+    color: white; 
+    padding: 20px; 
+    border-radius: 10px; 
+}
+
+.btn {
+    padding: 10px 15px; 
+    font-size: 14px; 
+}

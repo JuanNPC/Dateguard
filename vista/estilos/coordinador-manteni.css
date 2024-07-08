@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Poppins-Light";
+  src: url(../fuentes/Poppins-Light.ttf);
+}
+
+h1,
+a,
+th,
+td {
+  font-family: "Poppins-Light";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar {
+  background-color: #f0f0f0;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar a {
+  margin-bottom: 40px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 12px;
+  text-align: center;
+}
+
+main {
+  background-image: url('../img/login.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.table-responsive {
+  margin-top: 20px; /* Espacio superior para la tabla */
+}
+
+.table th,
+.table td {
+  border: 1px solid #dee2e6;
+  padding: 8px;
+  text-align: center;
+  word-wrap: break-word; /* Evita que el texto se desborde */
+}
+
+.table th {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.table tbody tr:hover {
+  background-color: #e9ecef;
+}

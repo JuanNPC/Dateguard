@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Poppins-Light";
+  src: url(../fuentes/Poppins-Light.ttf);
+}
+
+h1,
+a,
+h2 {
+  font-family: "Poppins-Light";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.sidebar {
+  background-color: #f0f0f0;
+  padding: 20px;
+  height: 100vh; 
+  position: sticky; 
+  top: 0; 
+  overflow-y: auto; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.sidebar a {
+  margin-bottom: 20px; 
+  width: 100%; 
+  padding: 10px; 
+  box-sizing: border-box; 
+  text-decoration: none; 
+  font-size: 10px; 
+  text-align: center; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+main {
+  background-image: url('../img/login.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  min-height: 100vh; 
+  overflow: auto;
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  margin-bottom: 10px;
+  width: 100%; 
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.form-container label {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 5px;
+  display: block;
+  font-family: "Poppins-Light";
+}
+
+.form-container .descripcion-textarea {
+  height: auto;
+  max-height: 75px; 
+}
+
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+}

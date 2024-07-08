@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ejemplodemaquetacion</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../estilos/administrador.css">
+</head>
+
+<style>
+  @font-face {
+  font-family: "Poppins-Light";
+  src: url(../fuentes/Poppins-Light.ttf);
+}
+
+h1,
+a {
+  font-family: "Poppins-Light";
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.sidebar {
+  background-color: #f0f0f0;
+  padding: 20px;
+  height: 100vh; 
+  overflow-y: hidden; /* Eliminar barra de desplazamiento */
+  display: flex; /* Utilizar flexbox para centrar verticalmente */
+  flex-direction: column; /* Columna para centrar verticalmente */
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+}
+
+.sidebar a {
+  margin-bottom: 40px; /* Espacio entre enlaces */
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Espaciado interno */
+  box-sizing: border-box; /* Caja del modelo de caja */
+  text-decoration: none; /* Sin subrayado */
+  color: #000; /* Color de texto negro */
+  background-color: #ffffff; /* Fondo blanco */
+  font-size: 15px; /* Tamaño de fuente */
+  text-align: center; /* Centrar texto */
+}
+
+.sidebar a:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+main {
+  background-image: url('../img/login.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  min-height: 100vh; 
+  overflow: hidden;
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-container input {
+  margin-bottom: 10px;
+  width: 100%; 
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+</style>
+<body>
+
+  <header>
+    <h1><em>HOLA ADMINISTRADOR</em></h1>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 sidebar">
+        <a href="#">REGISTRO ACTIVOS</a>
+        <a href="#">ELIMINAR/ <br> MODIFICAR</a>
+        <a href="#">NOVEDADES</a>
+        <a href="#">REGISTRO MANTENIMIENTO</a>
+      </nav>
+      <main class="col-md-10 d-flex align-items-center justify-content-center">
+        
+      </main>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

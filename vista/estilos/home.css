@@ -1,0 +1,54 @@
+@font-face{
+    font-family: "Poppins-Light";
+    src: url(../fuentes/Poppins-Light.ttf);
+  }
+  
+h1{
+    font-family: "Poppins-Light";
+ }
+
+p{
+    font-family: "Poppins-Light";
+}
+
+body {
+    background-color: #34495e; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-home {
+    text-align: center;
+    color: #ffffff; 
+    font-size: 24px;
+}
+.container-home h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.btn {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.btn-login {
+    background-color: #3498db; 
+    color: #ffffff;
+    border: 1px solid #3498db;
+}
+.btn-login:hover {
+    background-color: #2980b9; 
+    border: 1px solid #2980b9;
+}
+.btn-register {
+    background-color: #2ecc71; 
+    color: #ffffff;
+    border: 1px solid #2ecc71;
+}
+.btn-register:hover {
+    background-color: #27ae60; 
+    border: 1px solid #27ae60;
+}
